@@ -1,0 +1,57 @@
+<div class="chat-container">
+  <div class="chats-view">
+    <div class="header-title">
+      <span class="title">Chats</span>
+      <i class="fa fa-plus-circle"></i>
+      <i class="fa fa-ellipsis-v"></i>
+    </div>
+    <div class="search">
+      <input type="text" placeholder="Search Here">
+    </div>
+    <div class="user-chat" (click)="setSelected(i)" [class.selected]="i === selected"
+      *ngFor="let chat of data; let i = index">
+      <img src="../../../assets/profile-pic.svg">
+      <div class="chat-info">
+        <p class="chat-name">{{chat.name}}</p>
+        <span class="recent-chat">{{chat.chat}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="chatting-screen">
+    <div class="name-header">
+      <div class="avatar">
+        <img src="../../../assets/profile-pic.svg">
+      </div>
+      <div class="name">
+        <h3>Akhil Naidu</h3>
+        <span>Online</span>
+      </div>
+      <i class="icon fa fa-phone-square"></i>
+      <i class="icon fa fa-video-camera"></i>
+    </div>
+    <div class="chat-display" #chatContainer>
+      <ng-scrollbar class="my-scrollbar">
+        <div class="scroll-content">
+          <ng-container *ngFor="let chat of chatting">
+            <div class="sender" *ngIf="chat.initiator === Initiator.SENDER">
+              <span class="sender-chat">
+                {{chat.chat}}
+              </span>
+            </div>
+            <div class="receiver" *ngIf="chat.initiator === Initiator.RECEIVER">
+              <span class="receiver-chat">
+                {{chat.chat}}
+              </span>
+            </div>
+          </ng-container>
+        </div>
+      </ng-scrollbar>
+    </div>
+    <div class="chat-type">
+      <input (keyup.ENTER)="sendMessage()" type="text" name="message" placeholder="Type your message here..."
+        [(ngModel)]="message">
+      <button (click)="sendMessage()"><i class="icon fa fa-send"></i></button>
+    </div>
+  </div>
+  <div class="profile-view"></div>
+</div>

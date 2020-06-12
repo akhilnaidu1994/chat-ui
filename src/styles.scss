@@ -1,1 +1,426 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  background-color: #f6f6f6;
+  background-image: url(./assets/background.svg);
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: left bottom;
+}
+
+.header {
+  top: 0;
+  position: fixed;
+  height: 10vh;
+  width: 100%;
+  background-color: #56baed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 10px 0 rgba(95, 186, 233, 0.4);
+
+  .logo {
+    .logo_text {
+      color: #f6f6f6;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  }
+
+  .links {
+    .link {
+      list-style: none;
+      display: inline-block;
+      padding: 10px;
+      cursor: pointer;
+
+      a {
+        color: #f6f6f6;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+    }
+
+    .link:hover {
+      background-color: #39ace7;
+    }
+
+    .link:focus {
+      outline: none;
+    }
+  }
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 3vw;
+}
+
+.register-container {
+  height: 97vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 3vw;
+}
+
+
+.login_card,
+.register_card {
+  width: 30vw;
+  min-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  padding: 5px 15px;
+
+  .login-title,
+  .register-title {
+    text-align: center;
+    color: #f6f6f6;
+    background-color: #56baed;
+    padding: 15px;
+    position: relative;
+    border-radius: 10px;
+    bottom: 30px;
+    box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin: 30px 0;
+    position: relative;
+    text-align: center;
+
+    i {
+      vertical-align: middle;
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: 20px;
+    }
+
+    input {
+      width: 80%;
+      padding: 15px;
+      border: 0;
+      border-bottom: 2px solid #ced4da;
+      text-decoration: none;
+      background-color: #f6f6f6;
+      font-size: 1.1rem;
+    }
+
+    input:focus+label,
+    input:not(:placeholder-shown)+label {
+      color: #56baed;
+      top: -10px;
+      font-size: .8rem;
+    }
+
+    input:focus {
+      outline: none;
+      border-bottom: 2px solid #56baed;
+    }
+
+    label {
+      font-size: 1rem;
+      position: absolute;
+      cursor: text;
+      transition: all 0.3s ease-in-out;
+      top: 20px;
+      left: 40px;
+    }
+
+  }
+
+  .submit {
+    text-align: center;
+
+    input {
+      background-color: #56baed;
+      border: none;
+      color: white;
+      padding: 15px 80px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 13px;
+      cursor: pointer;
+      -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+      box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+      -webkit-border-radius: 5px 5px 5px 5px;
+      border-radius: 5px 5px 5px 5px;
+      margin: 5px 20px 40px 20px;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+.chat-container {
+  display: flex;
+  width: 85%;
+  height: 80vh;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4);
+  background-color: #f6f6f6;
+  margin: 0 auto;
+  margin-top: 15vh;
+  border-radius: 10px;
+
+  .chats-view {
+    background-color: #56baed;
+    flex: 1;
+    border-radius: 10px;
+
+    .header-title {
+      height: 5vh;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 10px;
+
+      .title {
+        margin: 0;
+        color: #f6f6f6;
+        font-size: 1.2rem;
+        flex-basis: 60%;
+      }
+
+      i {
+        color: #f6f6f6;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+
+    .search {
+
+      margin: 1.3rem 0;
+
+      input {
+        display: block;
+        margin: 0 auto;
+        border: 0;
+        padding: .5rem;
+        width: 80%;
+        border-radius: 10px;
+        background-color: rgba($color: #f2f2f2, $alpha: 0.8);
+      }
+
+      input:focus {
+        outline: none;
+      }
+    }
+
+    .user-chat {
+
+      &.selected {
+        border-radius: 15px;
+        background-color: rgba($color: #f2f2f2, $alpha: 0.8);
+        color: #4c4c4c;
+        transition: all 0.4s ease-in;
+      }
+
+      display: flex;
+      color: #f6f6f6;
+      justify-content: space-around;
+      margin:10px;
+      padding: 5px;
+
+      cursor: pointer;
+
+      img {
+        height: 30px;
+        width: 30px;
+        align-self: center;
+      }
+
+      .chat-info {
+
+        flex-basis: 60%;
+
+        p {
+          margin: 0;
+          font-size: .9rem;
+        }
+
+        span {
+          font-size: .8rem;
+          opacity: .7;
+          width: 10rem;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          display: inline-block;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .chatting-screen {
+    flex: 2;
+    position: relative;
+    background-color: #f2f2f2;
+    height: 100%;
+
+    .name-header {
+      height: 10vh;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      background-color: rgba($color: #f2f2f2, $alpha: 0.8);
+      box-shadow: 0 2px 5px -3px #000;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .avatar {
+        img {
+          height: 50px;
+          width: 50px;
+        }
+      }
+
+      .icon {
+        font-size: 1.3rem;
+        color: #4c4c4c;
+        cursor: pointer;
+      }
+
+      .name {
+        flex-basis: 70%;
+
+        h3 {
+          margin: 0;
+          color: #4c4c4c;
+          opacity: .8;
+        }
+
+        span {
+          font-size: .8rem;
+          opacity: .7;
+          color: #4c4c4c;
+        }
+
+      }
+    }
+
+    .chat-type {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+
+      input {
+        padding: 13px;
+        border: 0;
+        width: 100%;
+        background-color: rgba($color: #f2f2f2, $alpha: 1);
+        box-shadow: 0 -1px 5px -3px #000;
+        font-size: 1rem;
+
+        &:focus {
+          outline: none;
+        }
+      }
+
+      button {
+        padding: 12px;
+        background-color: #56baed;
+        position: absolute;
+        right: 0;
+        top: 0;
+        cursor: pointer;
+        border: 0;
+
+        &:focus {
+          outline: none;
+        }
+
+        i {
+          color: #f6f6f6;
+          font-size: 1.3rem;
+        }
+      }
+
+    }
+
+    .chat-display {
+      height: 75%;
+      margin: 0 auto;
+      margin-top: 12vh;
+      width: 90%;
+
+      .scroll-content {
+
+        padding-right: 15px;
+
+        .sender {
+          margin-top: 10px;
+          text-align: right;
+
+          .sender-chat {
+            background-color: #56baed;
+            color: #f6f6f6;
+            padding: 5px 10px;
+            font-size: .8rem;
+            border-radius: 5px;
+          }
+        }
+
+        .receiver {
+
+          margin-top: 10px;
+          text-align: left;
+
+          .receiver-chat {
+            color: #f6f6f6;
+            background-color: rgba($color: #4c4c4c, $alpha: 0.8);
+            padding: 5px 10px;
+            font-size: .8rem;
+            border-radius: 5px;
+          }
+        }
+      }
+
+    }
+
+    // .chat-display {
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: flex-end;
+    //   height: 90%;
+    //   width: 90%;
+    //   margin: 0 auto;
+    //   overflow-y: hidden;
+
+
+
+
+    // }
+  }
+
+  .profile-view {
+    flex: 1;
+    box-shadow: -2px 0 5px -3px #000;
+    border-left: 1px solid rgba($color: #4c4c4c, $alpha: 0.2)
+  }
+}

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="login_card">
+    <h2 class="login-title">Login</h2>
+    <form #f="ngForm" (ngSubmit)="userLogin(f.value)" novalidate>
+      <div class="form-group">
+        <i class="fa fa-envelope" aria-hidden="true"></i>
+        <input id="email" type="email" name="email" ngModel autocomplete="off" placeholder=" ">
+        <label for="email">Email</label>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-key" aria-hidden="true"></i>
+        <input id="password" name="password" ngModel type="password" placeholder=" ">
+        <label for="password">Password</label>
+      </div>
+      <div class="submit">
+        <input type="submit" value="Login">
+      </div>
+    </form>
+  </div>
+</div>
