@@ -14,5 +14,5 @@ services:
     postgres:
         image: postgres
         environment: 
-            POSTGRES_PASSWORD=mysecretpassword
+           - POSTGRES_PASSWORD=mysecretpassword
         
