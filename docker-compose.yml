@@ -15,4 +15,9 @@ services:
         image: postgres
         environment: 
            - POSTGRES_PASSWORD=mysecretpassword
-        
+
+volumes: 
+    drupal-modules:
+    drupal-profiles:
+    drupal-sites: 
+    drupal-themes: 
